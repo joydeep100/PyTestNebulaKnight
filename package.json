@@ -1,0 +1,22 @@
+{
+  "name": "pysel-allure",
+  "version": "1.0.0",
+  "description": "## Python Selenium Automation \"Always Up To Date\"!",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Digit-Assure/pySelAut_AUTD.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Digit-Assure/pySelAut_AUTD/issues"
+  },
+  "homepage": "https://github.com/Digit-Assure/pySelAut_AUTD#readme"
+}

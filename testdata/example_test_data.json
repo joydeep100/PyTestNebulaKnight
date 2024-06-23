@@ -1,0 +1,16 @@
+[
+    {
+        "env": "QA",
+        "data": {
+            "login_page_logo_text": "Swag Labs",
+            "home_page_logo_text": "Swag Labs"
+        }
+    },
+    {
+        "env": "STAGING",
+        "data": {
+            "login_page_logo_text": "Swag Labs",
+            "home_page_logo_text": "Swag Labs"
+        }
+    }
+]
