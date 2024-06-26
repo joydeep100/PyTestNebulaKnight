@@ -8,6 +8,7 @@ def get_env_details(request):
         'secret': request.config.getoption("--secret"),
         'headless': request.config.getoption("--headless"),
         'testdata': request.config.getoption("--testdata"),
-        'baseurl': envData[request.config.getoption("--env")]['baseurl']
+        'baseurl': envData[request.config.getoption("--env")]['baseurl'],
+        'apiurl': envData[request.config.getoption("--env")]['apiurl']
     }
     return env_vars
