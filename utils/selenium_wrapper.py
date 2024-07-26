@@ -2,6 +2,8 @@
 from selenium.webdriver.common.by import By
 from selenium.webdriver import ActionChains
 from utils.base_driver import BaseDriver
+from assertpy import assert_that
+
 
 class SeleniumWrapper(BaseDriver):
 
@@ -29,10 +31,8 @@ class SeleniumWrapper(BaseDriver):
         if selector.startswith('//'):
             return self.driver.find_element(By.XPATH, selector).get_attribute("textContent")
         else:
-            # import pdb;pdb.set_trace()
             return self.driver.find_element(By.CSS_SELECTOR, selector).get_attribute("textContent")
 
     def assert_text(self, selector, expected):
         actual = self.get_text(selector)
-        assert expected == actual, f"Element text is not as expected. Expected: '{expected}', Actual: '{actual}'"
-
+        assert_that(expected).is_equal_to(actual)
