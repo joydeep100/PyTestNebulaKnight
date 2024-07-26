@@ -1,10 +1,10 @@
 envData = {
     'QA': {
         'baseurl': 'https://www.saucedemo.com/',
-        'apiurl': 'https://www.saucedemo.com/v1/api'
+        'apiurl': 'https://reqres.in/',
     },
     'STAGING': {
         'baseurl': 'https://www.saucedemo.com/',
-        'apiurl': 'https://www.saucedemo.com/v1/api'
+        'apiurl': 'https://reqres.in/'
     }
 }
