@@ -34,6 +34,11 @@ pytest -vsrP --browser=firefox --headless=false --env=QA --login=standard_user -
 pytest -vsrP --browser=firefox --headless=false --env=QA --login=standard_user --secret=secret_sauce --testdata=testdata/example_test_data.json tests/example_tests/example_tests.py
 ```
 
+### Test tags
+
+- To skip a test, use this decorator `@pytest.mark.skip(reason="<reason>")`
+- To run specific tags, use `-m "<tag_name>"` or `-m "not <tag_name>` etc.
+
 ### Allure Report integration (optional)
 
 #### Pre-condition

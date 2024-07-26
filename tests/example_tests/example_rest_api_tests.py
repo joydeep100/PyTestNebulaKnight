@@ -8,13 +8,14 @@ logging.getLogger().setLevel(logging.INFO)
 logger = logging.getLogger(__name__)
 
 # since headers are common defining here
+# TODO :: Pick token from --secret command line arg
 headers = {
     'Authorization': 'Bearer sampleToken',
     'Content-Type': 'application/json'
 }
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def shared_data():
     '''using this fixture to share data across tests'''
     data = {}
@@ -27,7 +28,7 @@ def global_setup(request):
     context = get_env_details(request)
     yield context
 
-
+@pytest.mark.smoke
 def test_create_user_api(global_setup, shared_data):
     url = global_setup['apiurl'] + "api/users"
     body = {
@@ -45,7 +46,7 @@ def test_create_user_api(global_setup, shared_data):
     # example of sharing data across tests, here we are storing 'id' in shared_data
     shared_data['id'] = response_data["id"]
 
-
+@pytest.mark.regression
 def test_update_user_api(global_setup, shared_data):
 
     url = global_setup['apiurl'] + "api/users/2"
@@ -66,7 +67,6 @@ def test_update_user_api(global_setup, shared_data):
 
 
 def test_get_user_api(global_setup, shared_data):
-
     url = global_setup['apiurl'] + "api/users/2"
 
     response = requests.get(url, headers=headers)
@@ -74,3 +74,8 @@ def test_get_user_api(global_setup, shared_data):
 
     response_data = response.json()
     assert_that(response_data["data"]["id"]).is_equal_to(2)
+
+
+@pytest.mark.skip(reason="no way of currently testing this")
+def dummy_test(global_setup, shared_data):
+    logger.info('Hey i am just fooling around!')
