@@ -22,7 +22,7 @@ def shared_data():
     yield data
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def global_setup(request):
     '''context will contain all env variables & env specific data stored in configs/env_data'''
     context = get_env_details(request)

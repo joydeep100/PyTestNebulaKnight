@@ -11,7 +11,7 @@ logger = logging.getLogger(__name__)
 '''This is a boiler place test script, we can use this script to replicate other test script files'''
 
 
-@pytest.fixture(scope="session")
+@pytest.fixture(scope="module")
 def global_setup(request):
 
     logger.info("Global Setup section")
