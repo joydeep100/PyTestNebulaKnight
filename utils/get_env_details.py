@@ -9,6 +9,8 @@ def get_env_details(request):
         'headless': request.config.getoption("--headless"),
         'testdata': request.config.getoption("--testdata"),
         'baseurl': envData[request.config.getoption("--env")]['baseurl'],
-        'apiurl': envData[request.config.getoption("--env")]['apiurl']
+        'apiurl': envData[request.config.getoption("--env")]['apiurl'],
+        'envData': envData[request.config.getoption("--env")]  
+        # use 'envData' to get all other data mentioned in configs.env_data under a given env.
     }
     return env_vars

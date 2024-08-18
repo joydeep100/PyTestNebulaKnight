@@ -7,3 +7,4 @@ allure-report/*.*
 .venv
 pythonProject
 node_modules/
+.pytest_cache/

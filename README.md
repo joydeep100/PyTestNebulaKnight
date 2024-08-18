@@ -27,7 +27,7 @@
 
 - Example API Test cases
 ```
-pytest -vsrP --browser=firefox --headless=false --env=QA --login=standard_user --secret=secret_sauce --testdata=testdata/example_test_data.json tests/example_tests/example_rest_api_tests.py
+pytest -vsrP --env=QA --testdata=testdata/example_test_data.json tests/example_tests/example_rest_api_tests.py
 ```
 - Example Web UI test cases
 ```
@@ -37,7 +37,9 @@ pytest -vsrP --browser=firefox --headless=false --env=QA --login=standard_user -
 ### Test tags
 
 - To skip a test, use this decorator `@pytest.mark.skip(reason="<reason>")`
+
 - To run specific tags, use `-m "<tag_name>"` or `-m "not <tag_name>` etc.
+Ex. `pytest -m smoke -vsrP --env=QA --testdata=testdata/example_test_data.json tests/example_tests/example_rest_api_tests.py`
 
 ### Allure Report integration (optional)
 
