@@ -9,8 +9,10 @@ class BaseDriver:
         if not BaseDriver.driver:  # Check if driver instance already exists
             if context['browser'] == 'chrome':
                 options = ChromeOptions()
-                if context['headless'] == 'true':
-                    options.add_argument("--headless")
+                options.add_argument("--no-sandbox")
+                options.add_argument("--disable-dev-shm-usage")
+                # if context['headless'] == 'true':
+                options.add_argument("--headless")
                 BaseDriver.driver = webdriver.Chrome(options)
 
             elif context['browser'] == 'firefox':

@@ -67,5 +67,5 @@ pytest -srP --browser=chrome --headless=true --env=QA --login=standard_user --se
 
 `npx allure serve allure-report/`
 
-
-
+### Issues
+- Chrome headed mode seems to be crashing in windows machine when auto webdriver download is set (this is default). setting headless mode as always on for chrome for the time being. 
