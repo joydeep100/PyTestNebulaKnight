@@ -1,4 +1,4 @@
-# PySelAut
+# PyTest_Selenium
 
 ## Python Selenium Automation Framework!
 
